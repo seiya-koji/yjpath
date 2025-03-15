@@ -1,0 +1,38 @@
+[project]
+name = "yjpath"
+version = "0.1.0"
+description = "A CLI tool to extract JSONPath from YAML"
+authors = [
+    {name = "Seiya Kojima", email = "sk.kojiko@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "click>=8.1.8",
+    "pyyaml>=6.0.2"
+]
+license = "MIT"
+
+[project.urls]
+Homepage = "https://github.com/seiya-koji/yjpath"
+Issues = "https://github.com/seiya-koji/yjpath/issues"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+packages = [{include = "yjpath", from = "src"}]
+
+[tool.poetry.scripts]
+yjpath = "yjpath.yjpath:main"
+
+[tool.poetry.group.dev.dependencies]
+black = "^25.1.0"
+isort = "^6.0.1"
+
+[tool.black]
+line-length = 79
+
+[tool.isort]
+profile = "black"
